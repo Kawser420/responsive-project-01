@@ -72,3 +72,11 @@
   font-weight: 700;
   color: rgb(19, 19, 19);
 }
+
+/* responsive layout related media query is here  */
+@media screen and (max-width: 576px) {
+  .navbar,
+  .nav-links {
+    flex-direction: column;
+  }
+}
