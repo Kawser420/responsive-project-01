@@ -17,6 +17,10 @@
   font-size: 18px;
 }
 
+.text-light-gray {
+  color: #727272;
+}
+
 .bg-light {
   background-color: rgba(255, 144, 14, 0.1);
 }
@@ -29,6 +33,15 @@
   border-radius: 10px;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main > section {
+  margin-top: 120px;
 }
 /* header style  */
 
@@ -52,7 +65,7 @@
 
 .navbar,
 .banner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -71,6 +84,31 @@
   font-size: 4rem;
   font-weight: 700;
   color: rgb(19, 19, 19);
+}
+
+/* teams features related style is here  */
+.teams {
+  align-items: center;
+}
+.team-img-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.our-features {
+  width: 537px;
+  margin-left: 80px;
+}
+.features-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+#quick-list {
+  font-weight: 500;
+}
+.text-primary {
+  color: #ff900e;
 }
 
 /* responsive layout related media query is here  */
