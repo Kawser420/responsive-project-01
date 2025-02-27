@@ -197,6 +197,17 @@ main > section {
 .sponsor-company img {
   filter: grayscale(100%);
 }
+/* footer style is here  */
+footer {
+  margin: 100px;
+}
+.footer {
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  background: rgb(255, 244, 231);
+}
+
 /* responsive layout related media query is here  */
 @media screen and (max-width: 576px) {
   .navbar,
