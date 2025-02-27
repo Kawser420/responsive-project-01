@@ -144,6 +144,9 @@ main > section {
   font-weight: 700;
   font-size: 4rem;
 }
+.feature-architects img {
+  width: 100%;
+}
 
 /* fact card related style  */
 .fact-title-bottom {
@@ -198,6 +201,7 @@ main > section {
 @media screen and (max-width: 576px) {
   .navbar,
   .nav-links,
+  .feature,
   .teams {
     flex-direction: column;
   }
@@ -217,12 +221,17 @@ main > section {
     justify-items: center;
     gap: 40px;
   }
+  #experience-badge {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 }
 
 /* medium size device  */
 @media screen and (min-width: 576px) and (max-width: 992px) {
   .navbar,
   .nav-links,
+  .feature,
   .teams {
     flex-direction: column;
   }
@@ -237,5 +246,9 @@ main > section {
   }
   .fact-response {
     justify-items: center;
+  }
+  #experience-badge {
+    margin-top: 10px;
+    margin-left: 20px;
   }
 }
