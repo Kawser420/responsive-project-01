@@ -3,184 +3,596 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>G3 Architects</title>
-    <link rel="stylesheet" href="styles/architects.css" />
+    <title>G3 Architects | Innovative Design Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B35",
+              secondary: "#2D4654",
+              accent: "#F3A446",
+              light: "#F7F7F7",
+              dark: "#1E2A36",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(45, 70, 84, 0.9) 0%,
+          rgba(30, 42, 54, 0.9) 100%
+        );
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(255, 107, 53, 0.1);
+        color: #ff6b35;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #ff6b35, #f3a446);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #ff6b35;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
 
-  <body class="work-sans-font">
-    <header class="bg-light">
-      <nav class="navbar display-flex">
-        <h3 class="brand">G3 Architects</h3>
-        <ul class="nav-links display-flex">
-          <!-- li.nav-item*4>a.nav-link -->
-          <li class="nav-item">
-            <a href="" class="nav-link text-gray">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link text-gray">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link text-gray">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link text-gray">Login</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="banner">
-        <div class="banner-content">
-          <h1 class="banner-title">Brand New Group of Architects</h1>
-          <p class="banner-description">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even
-          </p>
-          <button class="btn-primary">Explore More</button>
-        </div>
-        <img class="banner-image" src="images/banner.png" alt="" />
+  <body class="font-sans bg-light text-dark">
+    <!-- Header & Navigation -->
+    <header class="relative">
+      <div class="absolute top-0 left-0 w-full z-50 py-4">
+        <nav
+          class="container mx-auto px-4 md:px-6 flex justify-between items-center"
+        >
+          <div class="flex items-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              <span class="text-primary">G3</span> Architects
+            </h3>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex space-x-10">
+            <a href="#" class="nav-link text-white font-medium">Home</a>
+            <a href="#" class="nav-link text-white font-medium">About</a>
+            <a href="#" class="nav-link text-white font-medium">Projects</a>
+            <a href="#" class="nav-link text-white font-medium">Services</a>
+            <a href="#" class="nav-link text-white font-medium">Contact</a>
+          </div>
+
+          <div class="hidden lg:block">
+            <button
+              class="bg-primary hover:bg-opacity-90 text-white font-medium px-6 py-2.5 rounded-lg transition duration-300"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              type="button"
+              class="text-white focus:outline-none"
+              id="menu-toggle"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </nav>
       </div>
-    </header>
-    <main>
-      <!-- teams section start -->
-      <section class="teams display-flex">
-        <div class="team-img-container">
-          <img
-            src="images/team1.png"
-            alt="two architect discussing about design"
-          />
-          <img src="images/team2.png" alt="" />
-          <img src="images/team3.png" alt="" />
-          <img src="images/team4.png" alt="" />
-        </div>
-        <div class="our-features">
-          <h3 class="section-title">
-            <span id="quick-list" class="text-light-gray">Quick list</span>
-            <span>of Our </span><span class="text-primary">Features</span>
-          </h3>
-          <p class="feature-description text-light-gray">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even
-          </p>
-          <button class="btn-primary">Explore More</button>
-        </div>
-      </section>
 
-      <!-- features section start -->
-      <section class="features display-flex">
-        <div>
-          <h3 id="feature-section-title" class="section-title">
-            Features you will <br />
-            love & enjoy
-          </h3>
-          <p class="text-light-gray">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even
-          </p>
-
-          <!-- feature card container -->
-          <div class="feature-card">
-            <h4 class="feature-title">Desktop & Mobile Version</h4>
-            <p class="text-light-gray">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised...........
-            </p>
-          </div>
-          <div class="feature-card">
-            <h4 class="feature-title">Desktop & Mobile Version</h4>
-            <p class="text-light-gray">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised...........
-            </p>
-          </div>
-          <div class="feature-card">
-            <h4 class="feature-title">Desktop & Mobile Version</h4>
-            <p class="text-light-gray">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised...........
-            </p>
-          </div>
-          <div class="feature-card">
-            <h4 class="feature-title">Desktop & Mobile Version</h4>
-            <p class="text-light-gray">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised...........
-            </p>
-          </div>
-        </div>
-        <div class="featured-architect">
-          <img src="images/architect.png" alt="" />
-          <button id="experience-badge" class="btn-primary">
-            <span id="experience-year">10+Years</span>
-            <br />
-            <span>Experience</span>
+      <!-- Mobile Navigation -->
+      <div
+        class="hidden fixed inset-0 bg-secondary z-50 bg-opacity-95"
+        id="mobile-menu"
+      >
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+          <a href="#" class="text-white text-2xl font-medium">Home</a>
+          <a href="#" class="text-white text-2xl font-medium">About</a>
+          <a href="#" class="text-white text-2xl font-medium">Projects</a>
+          <a href="#" class="text-white text-2xl font-medium">Services</a>
+          <a href="#" class="text-white text-2xl font-medium">Contact</a>
+          <button
+            class="bg-primary text-white font-medium px-8 py-3 rounded-lg mt-4"
+          >
+            Get Started
+          </button>
+          <button
+            type="button"
+            class="absolute top-5 right-5 text-white"
+            id="close-menu"
+          >
+            <i class="fas fa-times text-2xl"></i>
           </button>
         </div>
-      </section>
+      </div>
 
-      <!-- some facts -->
-      <section>
-        <h3 class="section-title">Some Facts</h3>
-        <p class="text-light-gray fact-description">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration.
-        </p>
-        <div class="facts-container">
-          <!-- .fact-card*4>img.fact-icon+h4.fact-number+h5.fact-name -->
-          <div class="fact-card display-flex">
-            <div>
-              <img src="images/icons/ribon.png" alt="" class="fact-icon" />
-              <h4 class="fact-number">54</h4>
-              <h5 class="fact-name">Awards Winnings</h5>
-            </div>
-          </div>
-          <div class="fact-card display-flex">
-            <div>
-              <img src="images/icons/projects.png" alt="" class="fact-icon" />
-              <h4 class="fact-number">1458</h4>
-              <h5 class="fact-name">Project Finished</h5>
-            </div>
-          </div>
-          <div class="fact-card display-flex">
-            <div>
-              <img src="images/icons/customers.png" alt="" class="fact-icon" />
-              <h4 class="fact-number">590</h4>
-              <h5 class="fact-name">Clients Worked</h5>
-            </div>
-          </div>
-          <div class="fact-card display-flex">
-            <div>
-              <img src="images/icons/email.png" alt="" class="fact-icon" />
-              <h4 class="fact-number">22578</h4>
-              <h5 class="fact-name">Email Send</h5>
-            </div>
-          </div>
+      <!-- Hero Section -->
+      <div class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+            alt="Modern architecture building"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 hero-gradient"></div>
         </div>
-      </section>
 
-      <!-- Some facts  -->
-      <section class="our-sponsors">
-        <div class="sponsor-info">
-          <h3 class="section-title">Our Sponsors</h3>
-          <p class="text-light-gray">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration.
+        <div class="container mx-auto px-4 md:px-6 z-10 text-center text-white">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
+          >
+            Innovative <span class="text-primary">Architectural</span
+            ><br />Solutions
+          </h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
+            We design sustainable, functional and aesthetically remarkable
+            spaces that inspire and transform communities.
           </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              class="bg-primary hover:bg-opacity-90 text-white font-medium px-8 py-4 rounded-lg transition duration-300 text-lg"
+            >
+              Explore Our Work
+            </button>
+            <button
+              class="bg-transparent hover:bg-white hover:bg-opacity-10 border-2 border-white text-white font-medium px-8 py-4 rounded-lg transition duration-300 text-lg"
+            >
+              <i class="fas fa-calendar-alt mr-2"></i> Schedule Consultation
+            </button>
+          </div>
         </div>
-        <div class="sponsor-companies">
-          <img src="images/sponsors/spotify.png" alt="" />
-          <img src="images/sponsors/google.png" alt="" />
-          <img src="images/sponsors/amazon.png" alt="" />
-          <img src="images/sponsors/telerama.png" alt="" />
-          <img src="images/sponsors/figma.png" alt="" />
+
+        <div
+          class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <a href="#features" class="text-white text-4xl">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Features Section -->
+      <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Why Choose <span class="text-primary">G3 Architects</span>
+            </h2>
+            <p class="text-lg text-gray-600">
+              We combine innovative design, sustainable practices, and
+              cutting-edge technology to create spaces that stand the test of
+              time.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-light p-8 rounded-xl card-hover">
+              <div class="feature-icon">
+                <i class="fas fa-drafting-compass"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Innovative Design</h3>
+              <p class="text-gray-600">
+                Creative and forward-thinking architectural solutions tailored
+                to your vision and needs.
+              </p>
+            </div>
+
+            <div class="bg-light p-8 rounded-xl card-hover">
+              <div class="feature-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Sustainable Practice</h3>
+              <p class="text-gray-600">
+                Environmentally conscious designs that reduce carbon footprint
+                and promote sustainability.
+              </p>
+            </div>
+
+            <div class="bg-light p-8 rounded-xl card-hover">
+              <div class="feature-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Project Management</h3>
+              <p class="text-gray-600">
+                End-to-end project oversight ensuring quality, timeliness, and
+                budget adherence.
+              </p>
+            </div>
+
+            <div class="bg-light p-8 rounded-xl card-hover">
+              <div class="feature-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Award Winning</h3>
+              <p class="text-gray-600">
+                Recognized industry leader with multiple awards for design
+                excellence and innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Showcase -->
+      <section class="py-20 bg-secondary text-white">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Our <span class="text-primary">Featured Projects</span>
+            </h2>
+            <p class="text-lg opacity-80">
+              Explore our portfolio of exceptional architectural designs that
+              have transformed spaces and communities.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-2xl overflow-hidden card-hover">
+              <div class="h-80 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80"
+                  alt="Modern residential building"
+                  class="w-full h-full object-cover transition duration-500 hover:scale-110"
+                />
+              </div>
+              <div class="bg-dark p-6">
+                <h3 class="text-xl font-bold mb-2">Skyline Residence</h3>
+                <p class="opacity-80 mb-4">
+                  Modern luxury apartments with panoramic city views
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  View Project <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden card-hover">
+              <div class="h-80 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                  alt="Commercial building"
+                  class="w-full h-full object-cover transition duration-500 hover:scale-110"
+                />
+              </div>
+              <div class="bg-dark p-6">
+                <h3 class="text-xl font-bold mb-2">Innovation Tower</h3>
+                <p class="opacity-80 mb-4">
+                  Sustainable commercial space for tech enterprises
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  View Project <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden card-hover">
+              <div class="h-80 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1774&q=80"
+                  alt="Luxury home"
+                  class="w-full h-full object-cover transition duration-500 hover:scale-110"
+                />
+              </div>
+              <div class="bg-dark p-6">
+                <h3 class="text-xl font-bold mb-2">Hillside Villa</h3>
+                <p class="opacity-80 mb-4">
+                  Luxury residential property with minimalist design
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  View Project <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <button
+              class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium px-8 py-3 rounded-lg transition duration-300"
+            >
+              View All Projects
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
+          >
+            <div class="bg-white p-10 rounded-xl shadow-md card-hover">
+              <div class="stat-number">15+</div>
+              <h3 class="text-xl font-bold mb-2">Years Experience</h3>
+              <p class="text-gray-600">
+                Delivering exceptional architectural solutions
+              </p>
+            </div>
+
+            <div class="bg-white p-10 rounded-xl shadow-md card-hover">
+              <div class="stat-number">350+</div>
+              <h3 class="text-xl font-bold mb-2">Projects Completed</h3>
+              <p class="text-gray-600">
+                Across residential and commercial sectors
+              </p>
+            </div>
+
+            <div class="bg-white p-10 rounded-xl shadow-md card-hover">
+              <div class="stat-number">98%</div>
+              <h3 class="text-xl font-bold mb-2">Client Satisfaction</h3>
+              <p class="text-gray-600">Based on client feedback and reviews</p>
+            </div>
+
+            <div class="bg-white p-10 rounded-xl shadow-md card-hover">
+              <div class="stat-number">25+</div>
+              <h3 class="text-xl font-bold mb-2">Awards Received</h3>
+              <p class="text-gray-600">For design excellence and innovation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Bring Your Vision to Life?
+          </h2>
+          <p class="text-xl text-white opacity-90 max-w-3xl mx-auto mb-10">
+            Let's collaborate to create something extraordinary. Schedule a
+            consultation with our team today.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              class="bg-white text-primary hover:bg-opacity-90 font-medium px-8 py-4 rounded-lg transition duration-300 text-lg"
+            >
+              <i class="fas fa-phone-alt mr-2"></i> Contact Us
+            </button>
+            <button
+              class="bg-transparent hover:bg-white hover:bg-opacity-20 border-2 border-white text-white font-medium px-8 py-4 rounded-lg transition duration-300 text-lg"
+            >
+              <i class="fas fa-download mr-2"></i> Download Brochure
+            </button>
+          </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">
+              <span class="text-primary">G3</span> Architects
+            </h3>
+            <p class="opacity-80 mb-6">
+              Creating innovative architectural solutions that transform spaces
+              and inspire communities since 2008.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Architectural Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Interior Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Urban Planning</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Project Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Consultation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="opacity-80 hover:text-primary transition duration-300"
+                  >Renovation</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-6">Contact Us</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                <span class="opacity-80"
+                  >123 Design Street, Creative City, 10001</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone-alt text-primary mt-1 mr-3"></i>
+                <span class="opacity-80">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                <span class="opacity-80">info@g3architects.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                <span class="opacity-80">Mon-Fri: 9AM - 5PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center opacity-70">
+          <p>© 2023 G3 Architects. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("close-menu")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+    </script>
   </body>
 </html>
